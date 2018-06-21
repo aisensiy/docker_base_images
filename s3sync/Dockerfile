@@ -14,7 +14,7 @@ RUN apk --no-cache add --virtual build-dependencies py-pip && \
 
 # Entrypoint
 COPY entrypoint.sh /
-ENTRYPOINT ["/sbin/tini", "--", "/entrypoint.sh"]
+ENTRYPOINT ["/sbin/tini", "-g", "--", "/entrypoint.sh"]
 
 # Metadata params
 ARG VERSION

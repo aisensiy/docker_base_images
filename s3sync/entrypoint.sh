@@ -5,6 +5,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+trap "exit" INT TERM
+trap "kill 0" EXIT
+
 # VARs
 S3PATH=${S3PATH:-}
 SYNCDIR="${SYNCDIR:-/sync}"
